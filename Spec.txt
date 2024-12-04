@@ -1,0 +1,1 @@
+This is a simple web app that will allow users to create an account and write about any subject that they are interested in. Anyone who opens the app will be able to read entries made by the blog users but only registered users can write and edit their posts.
