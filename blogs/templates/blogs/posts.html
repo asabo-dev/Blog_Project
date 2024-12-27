@@ -6,8 +6,7 @@
     <ul>
         {% for post in posts %}
             <li>
-                <a href="{% url 'blog:post' post.id %}">{{ post.title }}</a>
-                <p>{{ post.date_posted|date:"F d, Y" }}</p>
+                <a href="{% url 'blogs:post' post.id %}">{{ post.title }}</a>
             </li>
         {% empty %}
             <li>No posts are available.</li>

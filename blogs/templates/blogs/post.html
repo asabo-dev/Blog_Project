@@ -1,0 +1,22 @@
+{% extends 'blogs/base.html' %}
+
+{% block content %}
+
+<h1>{{ post.title }}</h1>
+
+<p><em>By {{ post.author }} on {{ post.date_posted|date:"F d, Y" }}</em></p>
+
+<main>
+    <article>
+        {{ post.content|linebreaks }}
+    </article>
+{ % empty % }
+    <p>No posts are available.</p>
+{% endfor %}
+</main>
+
+{% endblock content %}
+    
+
+
+

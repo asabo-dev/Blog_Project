@@ -28,6 +28,8 @@ class Post(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
     published = models.BooleanField(default=False)
     categories = models.ManyToManyField(Category, related_name="posts")
+    date_posted = models.DateTimeField(auto_now_add=True)
+    #date_added = models.DateTimeField(auto_now_add=True)
 
     def save(self, *args, **kwargs):
         """Create a slug when saving a post."""
