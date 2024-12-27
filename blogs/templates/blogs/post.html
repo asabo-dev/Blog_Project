@@ -2,21 +2,16 @@
 
 {% block content %}
 
-<h1>{{ post.title }}</h1>
-
-<p><em>By {{ post.author }} on {{ post.date_posted|date:"F d, Y" }}</em></p>
-
-<main>
-    <article>
-        {{ post.content|linebreaks }}
-    </article>
-{ % empty % }
-    <p>No posts are available.</p>
-{% endfor %}
-</main>
-
+    <h2>{{ post.title }}</h2>
+    <main>
+        <article>
+            {{ post.content|linebreaks }}
+        </article>
+    </main>
+    <p>{{ post.date_posted }}</p>
 {% endblock content %}
-    
+
+<!-- The post.html template extends the base.html template and overrides the content block. The content block contains the post title, date posted, and content. The content filter linebreaks is used to convert line breaks into <p> tags. -->
 
 
 

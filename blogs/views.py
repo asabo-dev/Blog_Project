@@ -13,8 +13,8 @@ def posts(request):
     return render(request, 'blogs/posts.html', context)
 
 def post(request, post_id):
-    """Show a single post and all its comments."""
+    """Show a single post and its comments."""
     post = Post.objects.get(id=post_id)
-    comments = post.comment_set.order_by('-date_posted')
+    comments = post.comments.filter(approved=True)
     context = {'post': post, 'comments': comments}
     return render(request, 'blogs/post.html', context)
