@@ -5,6 +5,7 @@ from .models import Post, Comment
 class PostForm(forms.ModelForm):
     class Meta:
         model = Post
+        author = forms.CharField(max_length=100)
         fields = ['title', 'content']
         labels = {'title': '', 'content': ''}
         widgets = {'content': forms.Textarea(attrs={'cols': 80})}
