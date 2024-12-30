@@ -77,3 +77,15 @@ class PostTag(models.Model):
     def __str__(self):
         """Return a string representation of the post tag relationship."""
         return f"{self.post.title} - {self.tag.name}"
+
+class Entry(models.Model):
+    """Model representing a blog post entry."""
+    post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name='entries')
+    title = models.CharField(max_length=200)
+    content = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        """Return the entry title."""
+        return self.title

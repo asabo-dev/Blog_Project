@@ -1,19 +1,9 @@
 from django.contrib import admin
-from .models import Post, Category, Comment, Tag
+from .models import Post, Category, Comment, Tag, Entry
 
 # Register your models here.
-@admin.register(Post)
-class PostAdmin(admin.ModelAdmin):
-    list_display = ('title', 'author', 'created_at')
-
-@admin.register(Category)
-class CategoryAdmin(admin.ModelAdmin):
-    list_display = ('name',)
-
-@admin.register(Comment)
-class CommentAdmin(admin.ModelAdmin):
-    list_display = ('post', 'author', 'created_at')
-
-@admin.register(Tag)
-class TagAdmin(admin.ModelAdmin):
-    list_display = ('name',)
+admin.site.register(Post)
+admin.site.register(Category)
+admin.site.register(Comment)
+admin.site.register(Tag)
+admin.site.register(Entry)
