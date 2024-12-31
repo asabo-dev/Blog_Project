@@ -9,6 +9,9 @@
         </article>
     </main>
     <p>{{ post.date_posted }}</p>
+
+    <p><a href="{% url 'blogs:new_entry' post.id %}">Add a new entry</a></p>
+    
 {% endblock content %}
 
 <!-- The post.html template extends the base.html template and overrides the content block. The content block contains the post title, date posted, and content. The content filter linebreaks is used to convert line breaks into <p> tags. -->

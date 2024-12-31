@@ -1,6 +1,6 @@
 from django import forms
 
-from .models import Post, Comment
+from .models import Post, Comment, Entry
 
 class PostForm(forms.ModelForm):
     class Meta:
@@ -15,4 +15,11 @@ class CommentForm(forms.ModelForm):
         model = Comment
         fields = ['content']
         labels = {'content': ''}
+        widgets = {'content': forms.Textarea(attrs={'cols': 80})}
+
+class EntryForm(forms.ModelForm):
+    class Meta:
+        model = Entry
+        fields = ['title', 'content']
+        labels = {'title': '', 'content': ''}
         widgets = {'content': forms.Textarea(attrs={'cols': 80})}

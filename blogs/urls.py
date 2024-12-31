@@ -14,4 +14,6 @@ urlpatterns = [
     path('posts/<int:post_id>/', views.post, name='post'),
     # Page for adding a new post
     path('new_post/', views.new_post, name='new_post'),
+    # Page for adding a new entry
+    path('new_entry/<int:post_id>/', views.new_entry, name='new_entry'),
 ]
